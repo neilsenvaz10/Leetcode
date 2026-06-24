@@ -16,8 +16,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/neilsenvaz10/Leetcode/tree/master/0014-longest-common-prefix) |
+| [0033-search-in-rotated-sorted-array](https://github.com/neilsenvaz10/Leetcode/tree/master/0033-search-in-rotated-sorted-array) |
 ## Trie
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/neilsenvaz10/Leetcode/tree/master/0014-longest-common-prefix) |
+## Binary Search
+|  |
+| ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/neilsenvaz10/Leetcode/tree/master/0033-search-in-rotated-sorted-array) |
 <!---LeetCode Topics End-->
