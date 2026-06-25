@@ -17,6 +17,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0014-longest-common-prefix](https://github.com/neilsenvaz10/Leetcode/tree/master/0014-longest-common-prefix) |
 | [0033-search-in-rotated-sorted-array](https://github.com/neilsenvaz10/Leetcode/tree/master/0033-search-in-rotated-sorted-array) |
+| [0118-pascals-triangle](https://github.com/neilsenvaz10/Leetcode/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/neilsenvaz10/Leetcode/tree/master/0119-pascals-triangle-ii) |
 ## Trie
 |  |
@@ -29,5 +30,6 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 |  |
 | ------- |
+| [0118-pascals-triangle](https://github.com/neilsenvaz10/Leetcode/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/neilsenvaz10/Leetcode/tree/master/0119-pascals-triangle-ii) |
 <!---LeetCode Topics End-->
