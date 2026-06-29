@@ -1,20 +1,23 @@
 class Solution {
     public int singleNumber(int[] nums){
+        int result = 0;
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for(int num : nums)
+        for(int bit = 0; bit < 32; bit++)
         {
-            map.put(num, map.getOrDefault(num, 0) + 1);
-        }
+            int count = 0;
 
-        for(int key : map.keySet())
-        {
-            if(map.get(key) == 1)
+            for(int num : nums)
             {
-                return key;
+                if(((num >> bit) & 1) == 1)
+                {
+                    count++;
+                }
+            }
+            if(count % 3 != 0)
+            {
+                result |= (1 << bit);
             }
         }
-        return -1;
+        return result;
     }
 }
