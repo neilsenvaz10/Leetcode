@@ -16,6 +16,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0014-longest-common-prefix](https://github.com/neilsenvaz10/Leetcode/tree/master/0014-longest-common-prefix) |
 | [0151-reverse-words-in-a-string](https://github.com/neilsenvaz10/Leetcode/tree/master/0151-reverse-words-in-a-string) |
 | [0344-reverse-string](https://github.com/neilsenvaz10/Leetcode/tree/master/0344-reverse-string) |
+| [1903-largest-odd-number-in-string](https://github.com/neilsenvaz10/Leetcode/tree/master/1903-largest-odd-number-in-string) |
 ## Array
 |  |
 | ------- |
@@ -64,9 +65,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/neilsenvaz10/Leetcode/tree/master/0011-container-with-most-water) |
 | [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/neilsenvaz10/Leetcode/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
+| [1903-largest-odd-number-in-string](https://github.com/neilsenvaz10/Leetcode/tree/master/1903-largest-odd-number-in-string) |
 ## Bit Manipulation
 |  |
 | ------- |
 | [0136-single-number](https://github.com/neilsenvaz10/Leetcode/tree/master/0136-single-number) |
 | [0137-single-number-ii](https://github.com/neilsenvaz10/Leetcode/tree/master/0137-single-number-ii) |
+## Math
+|  |
+| ------- |
+| [1903-largest-odd-number-in-string](https://github.com/neilsenvaz10/Leetcode/tree/master/1903-largest-odd-number-in-string) |
 <!---LeetCode Topics End-->
