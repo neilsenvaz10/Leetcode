@@ -19,7 +19,7 @@ class Solution {
 
             for(int i=0;i<nums.length;i++)
             {
-                sum += (nums[i] + mid - 1) / mid;
+                sum += Math.ceil((double)nums[i]/(double)mid);
             }
             if(sum<=threshold)
             {
