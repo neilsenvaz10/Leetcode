@@ -3,12 +3,12 @@ class Solution {
     {
         int balls=1;
         int lastPosition=nums[0];
-        for(int num:nums)
+        for(int i=1;i<nums.length;i++)
         {
-            if(num-lastPosition>=maxDistance)
+            if(nums[i]-lastPosition>=maxDistance)
             {
                 balls++;
-                lastPosition=num;
+                lastPosition=nums[i];
             }
             if(balls==m)
             {
