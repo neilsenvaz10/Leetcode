@@ -8,11 +8,11 @@ class Solution {
             if(nums[i]-lastPosition>=maxDistance)
             {
                 balls++;
+                if(balls==m)
+                {
+                    return true;
+                }
                 lastPosition=nums[i];
-            }
-            if(balls==m)
-            {
-                return true;
             }
         }
         return balls>=m;
