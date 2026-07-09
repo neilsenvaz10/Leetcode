@@ -15,7 +15,7 @@ class Solution {
                 lastPosition=nums[i];
             }
         }
-        return balls>=m;
+        return false;
     }
 
     
