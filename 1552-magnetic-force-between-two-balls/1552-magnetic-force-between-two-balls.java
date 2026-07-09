@@ -15,7 +15,7 @@ class Solution {
                 return true;
             }
         }
-        return false;
+        return balls>=m;
     }
 
     
