@@ -13,7 +13,7 @@ class Solution {
         while(low<=high)
         {
             int cut1=low+(high-low)/2;
-            int cut2 = (n1+n2+1)/2 -cut1; 
+            int cut2 = (n1+n2)/2 -cut1; 
 
             int l1=(cut1==0)?Integer.MIN_VALUE:nums1[cut1-1];
             int l2=(cut2==0)?Integer.MIN_VALUE:nums2[cut2-1];
@@ -37,7 +37,7 @@ class Solution {
                 }
                 else
                 {
-                    return Math.max(l1, l2);
+                    return Math.min(r1, r2);
                 }
             }
         }
