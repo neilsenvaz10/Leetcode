@@ -33,7 +33,7 @@ class Solution {
             {
                 return new int[]{max,mid};
             }
-            else if(mat[max][mid]<mat[max][mid-1])
+            else if(mat[max][mid]<left)
             {
                 high=mid-1;
             }
