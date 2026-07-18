@@ -10,8 +10,7 @@ class Solution {
             while (sum >= target)
             {
                 minLength = Math.min(minLength, end - start + 1);
-                sum -= nums[start];
-                start++;
+                sum -= nums[start++];
             }
         }
 
