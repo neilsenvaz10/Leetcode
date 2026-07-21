@@ -4,36 +4,39 @@ class Solution {
         return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9');
     }
 
+    public char toLowerCase(char ch)
+    {
+        if (ch >= 'A' && ch <= 'Z')
+        {
+            return (char) (ch + 32);
+        }
+        return ch;
+    }
     public boolean isPalindrome(String s) 
     {
-        if(s.length()==0) return true;
-        String t=s.trim().toLowerCase();
-        int start=0;
-        int end=t.length()-1;
-        while(start<end)
+        int left = 0;
+        int right = s.length() - 1;
+        
+        while (left < right)
         {
-            if(!isAlphaNumeric(t.charAt(start)) || !isAlphaNumeric(t.charAt(end) ))
+            char l = s.charAt(left);
+            char r = s.charAt(right);
+            
+            if (!isAlphaNumeric(l))
             {
-                if(!isAlphaNumeric(t.charAt(start)))
-                {
-                    start++;
-                }
-                if(!isAlphaNumeric(t.charAt(end)))
-                {
-                    end--;
-                }
-            }
+                left++;
+            } 
+            else if (!isAlphaNumeric(r))
+            {
+                right--;
+            } 
             else
             {
-                if(t.charAt(start)==t.charAt(end))
-                {
-                    start++;
-                    end--;
-                }
-                else
-                {
+                if (toLowerCase(l) != toLowerCase(r)) {
                     return false;
                 }
+                left++;
+                right--;
             }
         }
         return true;
