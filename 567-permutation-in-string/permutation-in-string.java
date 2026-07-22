@@ -1,37 +1,35 @@
 class Solution {
-    public boolean isFreqSame(int arr1[],int arr2[])
-    {
-        for(int i=0;i<26;i++)
-        {
-            if(arr1[i]!=arr2[i])
-            {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public boolean checkInclusion(String s1, String s2) {
-        int freq[]=new int[26];
-        for(int i=0;i<s1.length();i++)
+
+        int n = s1.length();
+        int m = s2.length();
+
+        if (n > m)
         {
-            freq[s1.charAt(i)-'a']++;
+            return false;
         }
 
-        int windowSize=s1.length();
-        for(int j=0;j<s2.length();j++)
-        {
-            int windowFreq[] = new int[26];
-            int windowIndex=0;
-            int index=j;
+        int[] freq1 = new int[26];
+        int[] freq2 = new int[26];
 
-            while(windowIndex<windowSize && index<s2.length())
-            {
-                windowFreq[s2.charAt(index)-'a']++;
-                index++;
-                windowIndex++;
-            }
-            if(isFreqSame(windowFreq,freq))
+        for (int i = 0; i < n; i++)
+        {
+            freq1[s1.charAt(i) - 'a']++;
+            freq2[s2.charAt(i) - 'a']++;
+        }
+
+        if (Arrays.equals(freq1, freq2))
+        {
+            return true;
+        }
+
+        for (int i = n; i < m; i++)
+        {
+            freq2[s2.charAt(i) - 'a']++;
+            freq2[s2.charAt(i - n) - 'a']--;
+
+            if (Arrays.equals(freq1, freq2))
             {
                 return true;
             }
