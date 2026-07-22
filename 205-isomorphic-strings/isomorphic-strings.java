@@ -15,8 +15,7 @@ class Solution {
             }
             else
             {
-                if(mapS[c1] != c2 ||
-                   mapT[c2] != c1)
+                if(mapS[c1] != c2 || mapT[c2] != c1)
                 {
                     return false;
                 }
