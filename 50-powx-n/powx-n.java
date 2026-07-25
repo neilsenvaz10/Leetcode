@@ -1,21 +1,28 @@
 class Solution {
-    public double myPow(double x, int n) {
-        double ans=1;
-        long nn = n; 
+    public double myPow(double base, int exponent)
+    {
+        long longExponent = exponent;
         
-        if (nn < 0) {
-            nn = -nn;
-            x = 1 / x;
+        if (longExponent < 0)
+        {
+            return 1.0 / recursivePow(base, -longExponent);
         }
-        
-        while (nn > 0) {
-            if (nn % 2 == 1) { 
-                ans *= x; 
-            }
-            x *= x;      
-            nn /= 2;     
-        }
-        return ans;
+        return recursivePow(base, longExponent);
     }
-        
+
+    private double recursivePow(double base, long exponent) {
+        if (exponent == 0) return 1.0; 
+        if (exponent == 1) return base; 
+
+        double half = recursivePow(base, exponent / 2);
+
+        if (exponent % 2 == 0)
+        {
+            return half * half;
+        } 
+        else
+        {
+            return half * half * base;
+        }
+    }
 }
