@@ -48,13 +48,11 @@ class Solution {
         {
             if(first.val!=second.val)
             {
-                reverseList(newHead);
                 return false;
             }
             first=first.next;
             second=second.next;
         }
-        reverseList(newHead);
         return true;
     }
 }
