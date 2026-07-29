@@ -31,7 +31,7 @@ class Solution {
         {
             return true;
         }
-        
+
         ListNode slow=head;
         ListNode fast=head;
         while(fast.next!=null && fast.next.next!=null)
@@ -54,6 +54,7 @@ class Solution {
             first=first.next;
             second=second.next;
         }
+        reverseList(newHead);
         return true;
     }
 }
