@@ -9,25 +9,45 @@
  * }
  */
 class Solution {
+
+     public ListNode reverseList(ListNode head)
+     {
+        ListNode prev=null;
+        ListNode temp=head;
+
+        while(temp!=null)
+        {
+            ListNode link=temp.next;
+            temp.next=prev;
+            prev=temp;
+            temp=link;
+        }
+        return prev;
+    }
+
     public boolean isPalindrome(ListNode head)
     {
-        Stack<Integer> st=new Stack<>();
-        ListNode temp= head;
-        while(temp!=null)
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast.next!=null && fast.next.next!=null)
         {
-            st.push(temp.val);
-            temp=temp.next;
-        }    
+            slow=slow.next;
+            fast=fast.next.next;
+        }
 
-        temp=head;
-        while(temp!=null)
+        ListNode newHead=reverseList(slow.next);
+        ListNode first=head;
+        ListNode second=newHead;
+
+        while(second!=null)
         {
-            if(temp.val!=st.peek())
+            if(first.val!=second.val)
             {
+                reverseList(newHead);
                 return false;
             }
-            st.pop();
-            temp=temp.next;
+            first=first.next;
+            second=second.next;
         }
         return true;
     }
