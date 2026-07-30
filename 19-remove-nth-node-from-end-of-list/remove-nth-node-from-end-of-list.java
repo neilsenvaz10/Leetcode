@@ -33,14 +33,16 @@ class Solution {
             return head.next;
         }
 
-        ListNode curr = head;
-        int stepsToTarget = length - n - 1;
-        for (int i = 0; i < stepsToTarget; i++)
+        int count=0;
+        ListNode prev = null;
+        ListNode curr=head;
+        while(count!=length-n)
         {
-            curr = curr.next;
+            count+=1;
+            prev=curr;
+            curr=curr.next;
         }
-
-        curr.next = curr.next.next;
+        prev.next = curr.next;
         return head;
     }
 }
