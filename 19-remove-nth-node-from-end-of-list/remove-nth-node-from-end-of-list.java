@@ -38,9 +38,9 @@ class Solution {
         ListNode curr=head;
         while(count!=length-n)
         {
-            count+=1;
             prev=curr;
             curr=curr.next;
+            count+=1;
         }
         prev.next = curr.next;
         return head;
