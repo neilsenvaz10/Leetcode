@@ -10,50 +10,47 @@
  */
 class Solution
 {
-    private ListNode merge(ListNode l1, ListNode l2)
-    {
-        ListNode dummy = new ListNode(-1);
-        ListNode temp = dummy;
-
-        while (l1 != null && l2 != null)
-        {
-            if (l1.val <= l2.val)
-            {
-                temp.next = l1;
-                l1 = l1.next;
-            }
-            else
-            {
-                temp.next = l2;
-                l2 = l2.next;
-            }
-            temp = temp.next;
-        }
-
-        if (l1 != null) temp.next = l1;
-        if (l2 != null) temp.next = l2;
-
-        return dummy.next;
-    }
     public ListNode sortList(ListNode head)
     {
         if (head == null || head.next == null) return head;
 
         ListNode slow = head;
         ListNode fast = head.next;
-
         while (fast != null && fast.next != null)
         {
             slow = slow.next;
             fast = fast.next.next;
         }
 
-        ListNode mid = slow.next;
+        ListNode second = slow.next;
         slow.next = null;
 
         ListNode left = sortList(head);
-        ListNode right = sortList(mid);
+        ListNode right = sortList(second);
 
         return merge(left, right);
+    }
+    private ListNode merge(ListNode a, ListNode b)
+    {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+
+        while (a != null && b != null)
+        {
+            if (a.val <= b.val)
+            {
+                curr.next = a;
+                a = a.next;
+            }
+            else
+            {
+                curr.next = b;
+                b = b.next;
+            }
+            curr = curr.next;
+        }
+        curr.next = a != null ? a : b;
+
+        return dummy.next;
     }
 }
