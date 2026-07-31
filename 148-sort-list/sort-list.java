@@ -8,32 +8,52 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution
+{
+    private ListNode merge(ListNode l1, ListNode l2)
+    {
+        ListNode dummy = new ListNode(-1);
+        ListNode temp = dummy;
+
+        while (l1 != null && l2 != null)
+        {
+            if (l1.val <= l2.val)
+            {
+                temp.next = l1;
+                l1 = l1.next;
+            }
+            else
+            {
+                temp.next = l2;
+                l2 = l2.next;
+            }
+            temp = temp.next;
+        }
+
+        if (l1 != null) temp.next = l1;
+        if (l2 != null) temp.next = l2;
+
+        return dummy.next;
+    }
     public ListNode sortList(ListNode head)
     {
-        if (head == null)return null;
+        if (head == null || head.next == null) return head;
 
-        ArrayList<Integer> list = new ArrayList<>();
+        ListNode slow = head;
+        ListNode fast = head.next;
 
-        ListNode temp = head;
-
-        while (temp != null) {
-
-            list.add(temp.val);
-            temp = temp.next;
+        while (fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        Collections.sort(list);
+        ListNode mid = slow.next;
+        slow.next = null;
 
-        temp = head;
-        int i = 0;
+        ListNode left = sortList(head);
+        ListNode right = sortList(mid);
 
-        while (temp != null) {
-
-            temp.val = list.get(i++);
-            temp = temp.next;
-        }
-
-        return head;
+        return merge(left, right);
     }
 }
