@@ -4,24 +4,15 @@ class Solution {
         {
             return num;
         }
-        int res=0;
-        while(num>0)
-        {
-            res+=num%10;
-            num/=10;
-        }
 
-        while(res>9)
-        {
-            int num1=res;
-            int sum=0;
-            while(num1>0)
-            {
-                sum+=num1%10;
-                num1/=10;
-            }
-            res=sum;
-        }
-        return res;
+        while (num >= 10) { 
+            int sum = 0; 
+            while (num > 0) { 
+                sum += num % 10; 
+                num /= 10; 
+            } 
+            num = sum;
+        } 
+        return num; 
     }
 }
