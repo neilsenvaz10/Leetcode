@@ -24,41 +24,42 @@ class Solution {
         }
         return prev;
     }
+
+    private ListNode getKthNode(ListNode curr, int k)
+    {
+        while (curr != null && --k > 0)
+        {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
     public ListNode reverseKGroup(ListNode head, int k)
     {
-        Stack<ListNode> st=new Stack<>();
-        
-        ListNode dummy=new ListNode(0);
-        ListNode curr=dummy;
+        if (head == null || k == 1)
+            return head;
 
-        ListNode temp=head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
 
-        while(temp!=null)
-        {
-            int count=0;
-            ListNode groupStart = temp;
+        ListNode groupPrev = dummy;
 
-            while(temp!=null && count<k)
-            {
-                st.push(temp);
-                temp=temp.next;
-                count++;
-            }
-            
-            if(count==k)
-            {
-                while(!st.isEmpty())
-                {
-                    curr.next=st.pop();
-                    curr=curr.next;
-                }
-                curr.next = null;
-            }
-            else
-            {
-                curr.next = groupStart;
-            }
+        while (true) {
+
+            ListNode kth = getKthNode(groupPrev.next, k);
+
+            if (kth == null) break;
+
+            ListNode groupNext = kth.next;
+            kth.next = null;
+
+            ListNode groupHead = reverseList(groupPrev.next);
+            ListNode groupTail = groupPrev.next;
+            groupPrev.next = groupHead;
+            groupTail.next = groupNext;
+            groupPrev = groupTail;
         }
+
         return dummy.next;
     }
 }
