@@ -24,18 +24,17 @@ class Solution {
         {
             if(curr.next!=null && curr.val==curr.next.val)
             {
-                int Number=curr.val;
-                while(curr!=null && curr.val==Number)
+                while(curr.next!=null && curr.val==curr.next.val)
                 {
                     curr=curr.next;
                 }
-                prev.next=curr;
+                prev.next=curr.next;
             }
             else
             {
                 prev=prev.next;
-                curr=curr.next;
             }
+            curr=curr.next;
         }
         return dummy.next;
     }
