@@ -15,13 +15,17 @@ class Solution {
         if (lists.length == 0) return null;
         if (lists.length == 1) return lists[0];
 
-        ListNode ans = lists[0];
+        int interval = 1;
 
-        for (int i = 1; i < lists.length; i++)
+        while (interval < lists.length)
         {
-            ans = merge(ans, lists[i]);
+            for (int i=0; i+interval<lists.length;i+= interval*2)
+            {
+                lists[i] = merge(lists[i], lists[i + interval]);
+            }
+            interval *= 2;
         }
-        return ans;
+        return lists[0];
     }
 
     private ListNode merge(ListNode a, ListNode b)
