@@ -15,41 +15,30 @@ class Solution {
         if (lists.length == 0) return null;
         if (lists.length == 1) return lists[0];
 
-        int interval = 1;
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
 
-        while (interval < lists.length)
+        for (ListNode node : lists)
         {
-            for (int i=0; i+interval<lists.length;i+= interval*2)
+            if (node != null)
             {
-                lists[i] = merge(lists[i], lists[i + interval]);
+                pq.offer(node);
             }
-            interval *= 2;
         }
-        return lists[0];
-    }
 
-    private ListNode merge(ListNode a, ListNode b)
-    {
         ListNode dummy = new ListNode(-1);
         ListNode curr = dummy;
 
-        while (a != null && b != null)
+        while (!pq.isEmpty())
         {
-            if (a.val <= b.val)
-            {
-                curr.next = a;
-                a = a.next;
-            }
-            else
-            {
-                curr.next = b;
-                b = b.next;
-            }
+            ListNode node = pq.poll();
+            curr.next = node;
             curr = curr.next;
-        }
-        if (a != null)curr.next = a;
-        if (b != null) curr.next = b;
 
+            if (node.next != null)  
+            {
+                pq.offer(node.next);
+            }
+        }
         return dummy.next;
     }
 }
