@@ -6,13 +6,12 @@ class Solution {
 
         for(int i=(2*n)-1;i>=0;i--)
         {
-            int currIndex=i%n;
-            while(!st.isEmpty() && nums[currIndex]>=st.peek())
+            while(!st.isEmpty() && nums[i%n]>=st.peek())
             {
                 st.pop();
             }
             ans[i%n]=(st.isEmpty())?-1:st.peek();
-            st.push(nums[currIndex]);
+            st.push(nums[i%n]);
         }
         return ans;
     }
