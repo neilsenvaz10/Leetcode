@@ -11,14 +11,7 @@ class Solution {
             {
                 st.pop();
             }
-            if(st.isEmpty())
-            {
-                ans[i%n]=-1;
-            }
-            else
-            {
-                ans[i%n]=st.peek();
-            }
+            ans[i%n]=(st.isEmpty())?-1:st.peek();
             st.push(nums[currIndex]);
         }
         return ans;
